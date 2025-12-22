@@ -19,6 +19,36 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Shwe Casino 99 | အကောင်းဆုံး အွန်လိုင်း ကာစီနို Myanmar 2025",
   description: "Shwe Casino 99 - မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို။ ဘောနပ်စ် အများဆုံး၊ ငွေထုတ်ယူမှု မြန်ဆန်။",
+  keywords: "shwe casino, myanmar casino, online casino myanmar, ကာစီနို",
+  
+  openGraph: {
+    title: "Shwe Casino 99 | အကောင်းဆုံး အွန်လိုင်း ကာစီနို Myanmar 2025",
+    description: "Shwe Casino 99 - မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို။",
+    url: 'https://shwecasino99.com',
+    siteName: 'Shwe Casino 99',
+    images: [{
+      url: 'https://shwecasino99.com/images/og-image.jpg',
+      width: 1200,
+      height: 630,
+    }],
+    locale: 'my_MM',
+    type: 'website',
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shwe Casino 99 | အကောင်းဆုံး အွန်လိုင်း ကာစီနို Myanmar 2025',
+    description: 'Shwe Casino 99 - မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို။',
+  },
+  
+  robots: {
+    index: true,
+    follow: true,
+  },
+  
+  alternates: {
+    canonical: 'https://shwecasino99.com',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
