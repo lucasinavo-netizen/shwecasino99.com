@@ -186,13 +186,17 @@ const PromoSections = () => (
             <button onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-red-900 px-8 py-3 rounded-lg font-bold">ယခု စတင်အသုံးပြုပါ</button>
           </div>
           <div className="flex-1">
-            <div className="relative rounded-lg overflow-hidden h-64">
+            <div className="relative rounded-lg overflow-hidden h-64 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
               <Image 
                 src="/images/promo-welcome-bonus.jpg" 
                 alt="New Welcome Bonus Promotion"
                 fill
                 className="object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
               />
+              <div className="absolute inset-0 flex items-center justify-center text-8xl opacity-20">💰🎰</div>
             </div>
           </div>
         </div>
@@ -207,13 +211,17 @@ const PromoSections = () => (
             <button onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-r from-red-800 to-red-900 text-white px-8 py-3 rounded-lg font-bold">ပရိုမိုးရှင်းကြည့်ရှုပါ</button>
           </div>
           <div className="flex-1">
-            <div className="relative rounded-lg overflow-hidden h-80">
+            <div className="relative rounded-lg overflow-hidden h-80 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
               <Image 
                 src="/images/promo-christmas.jpg" 
                 alt="Merry Shwe Christmas Promotion"
                 fill
                 className="object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
               />
+              <div className="absolute inset-0 flex items-center justify-center text-9xl opacity-20">🎁</div>
             </div>
           </div>
         </div>
