@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const affiliateLinks = [
   { url: "https://www.tik999.net/m/home?affiliateCode=seom2502", priority: 5 },
@@ -56,11 +57,19 @@ const Header = () => {
 const HeroBanner = () => (
   <section className="bg-red-900">
     <div className="container mx-auto px-4 py-6">
-      <div className="relative bg-gradient-to-r from-blue-400 via-purple-300 to-pink-400 rounded-lg h-96 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-6xl mb-4">🎄🎰🎅</div>
-          <h2 className="text-4xl font-bold text-red-700 mb-2">ဂျောက်ပွဲ ၅၀,၀၀၀ ကျပ်</h2>
-          <p className="text-xl text-red-600">Starlight Christmas မှာ Scatter တွေပါဝင်မယ်</p>
+      <div className="relative rounded-lg h-96 overflow-hidden">
+        <Image 
+          src="/images/le-santa.jpg" 
+          alt="LE SANTA Christmas Banner"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-white mb-2 drop-shadow-lg">ဂျောက်ပွဲ ၅၀,၀၀၀ ကျပ်</h2>
+            <p className="text-xl text-yellow-200 drop-shadow-lg">Starlight Christmas မှာ Scatter တွေပါဝင်မယ်</p>
+          </div>
         </div>
       </div>
     </div>
@@ -111,14 +120,14 @@ const GameProviders = () => {
 
 const PopularGames = () => {
   const games = [
-    { name: 'Shwe Bonanza', provider: 'PRAGMATIC', badge: 'မြင့်', icon: '🍭' },
-    { name: 'Starlight Princess', provider: 'PRAGMATIC', badge: 'ပူပန်', icon: '⭐' },
+    { name: 'Shwe Bonanza', provider: 'PRAGMATIC', badge: 'မြင့်', image: '/images/shwe-bonanza.jpg' },
+    { name: 'Starlight Princess', provider: 'PRAGMATIC', badge: 'ပူပန်', image: '/images/starlight-princess.jpg' },
+    { name: '5 Lions Megaways', provider: 'PRAGMATIC', badge: 'မြင့်', image: '/images/5-lions-megaways.jpg' },
+    { name: 'Gates of Olympus', provider: 'PRAGMATIC', badge: 'မြင့်', image: '/images/gates-of-olympus.jpg' },
+    { name: 'Ancient Egypt Classic', provider: 'PRAGMATIC', badge: 'ပူပန်', image: '/images/ancient-egypt.jpg' },
+    { name: 'Caishen\'s Gold', provider: 'PRAGMATIC', badge: 'မြင့်', image: '/images/caishens-gold.jpg' },
     { name: 'Le Panta', provider: 'HACKSAW', icon: '🎭' },
     { name: 'Fire Token', provider: 'PLAY\'N GO', icon: '💎' },
-    { name: '3 Genie Pots', provider: 'BNG', icon: '🍭' },
-    { name: 'Gates of Olympus', provider: 'PRAGMATIC', badge: 'မြင့်', icon: '⭐' },
-    { name: 'Le Cowary', provider: 'HACKSAW', icon: '🎭' },
-    { name: 'Tomb of Dead', provider: 'PLAY\'N GO', badge: 'ပူပန်', icon: '💎' },
   ];
   return (
     <section className="bg-red-900 py-6">
@@ -130,14 +139,28 @@ const PopularGames = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
           {games.map((g, i) => (
-            <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-br from-purple-900 via-blue-900 to-red-900 rounded-lg overflow-hidden border border-red-700 hover:border-yellow-500 cursor-pointer relative">
+            <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-br from-purple-900 via-blue-900 to-red-900 rounded-lg overflow-hidden border border-red-700 hover:border-yellow-500 cursor-pointer relative group">
               {g.badge && <div className="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded z-10">{g.badge}</div>}
-              <div className="aspect-square bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center"><div className="text-6xl">{g.icon}</div></div>
+              <div className="aspect-square relative overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600">
+                {g.image ? (
+                  <Image 
+                    src={g.image} 
+                    alt={g.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 12.5vw"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-6xl">{g.icon || '🎮'}</div>
+                  </div>
+                )}
+              </div>
               <div className="p-2 bg-gradient-to-b from-gray-900/80 to-black/80">
                 <div className="text-white text-xs font-bold truncate">{g.name}</div>
                 <div className="flex items-center justify-between mt-1">
                   <span className="text-xs text-gray-400">{g.provider}</span>
-                  <button className="text-white bg-red-700 rounded-full p-1">▶</button>
+                  <button className="text-white bg-red-700 rounded-full p-1 hover:bg-red-600 transition-colors">▶</button>
                 </div>
               </div>
             </div>
