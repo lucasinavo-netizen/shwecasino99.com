@@ -126,8 +126,8 @@ const PopularGames = () => {
     { name: 'Gates of Olympus', provider: 'PRAGMATIC', badge: 'မြင့်', image: '/images/gates-of-olympus.jpg' },
     { name: 'Ancient Egypt Classic', provider: 'PRAGMATIC', badge: 'ပူပန်', image: '/images/ancient-egypt.jpg' },
     { name: 'Caishen\'s Gold', provider: 'PRAGMATIC', badge: 'မြင့်', image: '/images/caishens-gold.jpg' },
-    { name: 'Le Panta', provider: 'HACKSAW', icon: '🎭' },
-    { name: 'Fire Token', provider: 'PLAY\'N GO', icon: '💎' },
+    { name: 'Crazy 777 2', provider: 'PRAGMATIC', badge: 'ပူပန်', image: '/images/crazy-777-2.jpg' },
+    { name: 'Super Ace DELUXE', provider: 'PRAGMATIC', badge: 'မြင့်', image: '/images/super-ace-deluxe.jpg' },
   ];
   return (
     <section className="bg-red-900 py-6">
