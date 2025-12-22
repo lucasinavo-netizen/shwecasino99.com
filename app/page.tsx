@@ -26,11 +26,17 @@ const Header = () => {
     <header className="bg-gradient-to-b from-red-900 to-red-800 border-b-4 border-yellow-600">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-3">
-          <div className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-2xl font-bold text-red-900">🏆</div>
-            <div>
-              <div className="text-yellow-400 font-bold text-xl">Shwe</div>
-              <div className="text-yellow-300 text-xs">CASINO 99</div>
+          <div className="flex items-center gap-3">
+            <div className="relative h-12 w-auto flex items-center">
+              <Image 
+                src="/images/logo.png" 
+                alt="Shwe Casino 99 Logo"
+                width={180}
+                height={48}
+                className="object-contain h-full w-auto"
+                priority
+                style={{ maxHeight: '48px', width: 'auto' }}
+              />
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -89,12 +95,12 @@ const SearchBar = () => (
 
 const GameProviders = () => {
   const providers = [
-    { name: 'BGAMING', color: 'from-orange-600 to-red-700', icon: '🐼' },
-    { name: 'PRAGMATIC', color: 'from-purple-900 to-red-900', icon: '🎭' },
-    { name: 'PG SOFT', color: 'from-blue-900 to-purple-900', icon: '🐉' },
-    { name: 'BNG', color: 'from-red-800 to-red-900', icon: '💰' },
-    { name: 'SHAN', color: 'from-orange-700 to-red-800', icon: '🎴' },
-    { name: 'HACKSAW', color: 'from-gray-800 to-red-900', icon: '🦝' },
+    { name: 'BGAMING', color: 'from-orange-600 to-red-700', logo: '/images/bgaming-logo.jpg' },
+    { name: 'PRAGMATIC', color: 'from-purple-900 to-red-900', logo: '/images/pragmatic-logo.jpg' },
+    { name: 'PG SOFT', color: 'from-blue-900 to-purple-900', logo: '/images/pgsoft-logo.jpg' },
+    { name: 'BNG', color: 'from-red-800 to-red-900', logo: '/images/bng-logo.jpg' },
+    { name: 'SHAN', color: 'from-orange-700 to-red-800', logo: '/images/shan-logo.jpg' },
+    { name: 'HACKSAW', color: 'from-gray-800 to-red-900', logo: '/images/hacksaw-logo.jpg' },
   ];
   return (
     <section className="bg-red-950 py-6">
@@ -107,8 +113,16 @@ const GameProviders = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {providers.map((p, i) => (
-            <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className={`bg-gradient-to-br ${p.color} rounded-lg p-6 h-48 flex flex-col items-center justify-center border border-red-700 hover:border-yellow-500 cursor-pointer`}>
-              <div className="text-4xl mb-3">{p.icon}</div>
+            <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className={`bg-gradient-to-br ${p.color} rounded-lg p-6 h-48 flex flex-col items-center justify-center border border-red-700 hover:border-yellow-500 cursor-pointer group`}>
+              <div className="relative w-full h-24 mb-3 flex items-center justify-center">
+                <Image 
+                  src={p.logo} 
+                  alt={`${p.name} Logo`}
+                  fill
+                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
+                />
+              </div>
               <div className="text-white font-bold text-sm">{p.name}</div>
             </div>
           ))}
@@ -176,7 +190,14 @@ const PromoSections = () => (
             <button onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-red-900 px-8 py-3 rounded-lg font-bold">ယခု စတင်အသုံးပြုပါ</button>
           </div>
           <div className="flex-1">
-            <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg p-8 h-64 flex items-center justify-center text-8xl">💰🎰</div>
+            <div className="relative rounded-lg overflow-hidden h-64">
+              <Image 
+                src="/images/promo-welcome-bonus.jpg" 
+                alt="New Welcome Bonus Promotion"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -190,7 +211,14 @@ const PromoSections = () => (
             <button onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-r from-red-800 to-red-900 text-white px-8 py-3 rounded-lg font-bold">ပရိုမိုးရှင်းကြည့်ရှုပါ</button>
           </div>
           <div className="flex-1">
-            <div className="bg-gradient-to-br from-red-500 to-orange-500 rounded-lg h-80 flex items-center justify-center"><div className="text-center"><div className="text-9xl">🎁</div><div className="text-white text-2xl font-bold mt-4">CASH PRIZE</div></div></div>
+            <div className="relative rounded-lg overflow-hidden h-80">
+              <Image 
+                src="/images/promo-christmas.jpg" 
+                alt="Merry Shwe Christmas Promotion"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
