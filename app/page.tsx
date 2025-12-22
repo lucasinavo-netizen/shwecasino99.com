@@ -65,8 +65,8 @@ const HeroBanner = () => (
     <div className="container mx-auto px-4 py-6">
       <div className="relative rounded-lg h-96 overflow-hidden">
         <Image 
-          src="/images/le-santa.jpg" 
-          alt="LE SANTA Christmas Banner"
+          src="/images/heng3.jpg" 
+          alt="Shwe Casino Hero Banner"
           fill
           className="object-cover"
           priority
