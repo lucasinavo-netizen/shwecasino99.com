@@ -142,19 +142,13 @@ const PopularGames = () => {
             <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-br from-purple-900 via-blue-900 to-red-900 rounded-lg overflow-hidden border border-red-700 hover:border-yellow-500 cursor-pointer relative group">
               {g.badge && <div className="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded z-10">{g.badge}</div>}
               <div className="aspect-square relative overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600">
-                {g.image ? (
-                  <Image 
-                    src={g.image} 
-                    alt={g.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 12.5vw"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-6xl">{g.icon || '🎮'}</div>
-                  </div>
-                )}
+                <Image 
+                  src={g.image} 
+                  alt={g.name}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 12.5vw"
+                />
               </div>
               <div className="p-2 bg-gradient-to-b from-gray-900/80 to-black/80">
                 <div className="text-white text-xs font-bold truncate">{g.name}</div>
