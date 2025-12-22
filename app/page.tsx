@@ -23,7 +23,7 @@ const getRandomLink = () => {
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="bg-gradient-to-b from-red-900 to-red-800 border-b-4 border-yellow-600">
+    <header className="bg-[#8B0000] border-b-4 border-yellow-600">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-3">
           <div className="flex items-center gap-3">
@@ -71,12 +71,6 @@ const HeroBanner = () => (
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-white mb-2 drop-shadow-lg">ဂျောက်ပွဲ ၅၀,၀၀၀ ကျပ်</h2>
-            <p className="text-xl text-yellow-200 drop-shadow-lg">Starlight Christmas မှာ Scatter တွေပါဝင်မယ်</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -113,17 +107,19 @@ const GameProviders = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {providers.map((p, i) => (
-            <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className={`bg-gradient-to-br ${p.color} rounded-lg p-6 h-48 flex flex-col items-center justify-center border border-red-700 hover:border-yellow-500 cursor-pointer group`}>
-              <div className="relative w-full h-24 mb-3 flex items-center justify-center">
+            <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className={`bg-gradient-to-br ${p.color} rounded-lg overflow-hidden h-48 flex flex-col items-center justify-center border border-red-700 hover:border-yellow-500 cursor-pointer group relative`}>
+              <div className="absolute inset-0 w-full h-full">
                 <Image 
                   src={p.logo} 
                   alt={`${p.name} Logo`}
                   fill
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
                 />
               </div>
-              <div className="text-white font-bold text-sm">{p.name}</div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
+                <div className="text-white font-bold text-sm text-center">{p.name}</div>
+              </div>
             </div>
           ))}
         </div>
