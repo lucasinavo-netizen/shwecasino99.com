@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const affiliateLinks = [
   { url: "https://www.tik999.net/m/home?affiliateCode=seom2502", priority: 5 },
@@ -18,6 +19,14 @@ const getRandomLink = () => {
     for (let i = 0; i < link.priority; i++) weighted.push(link.url);
   });
   return weighted[Math.floor(Math.random() * weighted.length)];
+};
+
+const openAffiliateLink = () => {
+  const link = document.createElement('a');
+  link.href = getRandomLink();
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer sponsored';
+  link.click();
 };
 
 const Header = () => {
@@ -40,19 +49,19 @@ const Header = () => {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <button onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-red-900 px-6 py-2 rounded font-bold text-sm hover:shadow-lg">အကောင့်ဖွင့်ရန်</button>
-            <button onClick={() => window.open(getRandomLink(), '_blank')} className="border-2 border-yellow-500 text-yellow-400 px-6 py-2 rounded font-bold text-sm hover:bg-yellow-500 hover:text-red-900">အကောင့်ဝင်ရန်</button>
+            <button onClick={openAffiliateLink} className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-red-900 px-6 py-2 rounded font-bold text-sm hover:shadow-lg">အကောင့်ဖွင့်ရန်</button>
+            <button onClick={openAffiliateLink} className="border-2 border-yellow-500 text-yellow-400 px-6 py-2 rounded font-bold text-sm hover:bg-yellow-500 hover:text-red-900">အကောင့်ဝင်ရန်</button>
             <button onClick={() => setMenuOpen(!menuOpen)} className="text-yellow-400 text-3xl lg:hidden">☰</button>
           </div>
         </div>
         <nav className="border-t border-red-700 py-3">
           <div className="hidden lg:flex justify-center gap-6 text-sm">
-            <a href="#" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🏠</span> လေ့လာရန်</a>
-            <a href="#" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🎰</span> လိုင်ဗ်ကာစီနို</a>
-            <a href="#" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🎲</span> စလော့</a>
-            <a href="#" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🎮</span> ပရိုမိုးရှင်း</a>
-            <a href="#" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>⚽</span> အားကစား</a>
-            <a href="#" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🎣</span> ဘင်ဂိုး</a>
+            <Link href="/" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🏠</span> လေ့လာရန်</Link>
+            <Link href="#live-casino" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🎰</span> လိုင်ဗ်ကာစီနို</Link>
+            <Link href="#slots" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🎲</span> စလော့</Link>
+            <Link href="#promotions" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🎮</span> ပရိုမိုးရှင်း</Link>
+            <Link href="#sports" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>⚽</span> အားကစား</Link>
+            <Link href="#fishing" className="flex items-center gap-2 text-white hover:text-yellow-400"><span>🎣</span> ဘင်ဂိုး</Link>
           </div>
         </nav>
       </div>
@@ -112,7 +121,7 @@ const GameProviders = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {providers.map((p, i) => (
-            <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className={`bg-gradient-to-br ${p.color} rounded-lg overflow-hidden h-48 flex flex-col items-center justify-center border border-red-700 hover:border-yellow-500 cursor-pointer group relative`}>
+            <div key={i} onClick={openAffiliateLink} className={`bg-gradient-to-br ${p.color} rounded-lg overflow-hidden h-48 flex flex-col items-center justify-center border border-red-700 hover:border-yellow-500 cursor-pointer group relative`}>
               <div className="absolute inset-0 w-full h-full">
                 <Image 
                   src={p.logo} 
@@ -154,7 +163,7 @@ const PopularGames = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
           {games.map((g, i) => (
-            <div key={i} onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-br from-purple-900 via-blue-900 to-red-900 rounded-lg overflow-hidden border border-red-700 hover:border-yellow-500 cursor-pointer relative group">
+            <div key={i} onClick={openAffiliateLink} className="bg-gradient-to-br from-purple-900 via-blue-900 to-red-900 rounded-lg overflow-hidden border border-red-700 hover:border-yellow-500 cursor-pointer relative group">
               {g.badge && <div className="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded z-10">{g.badge}</div>}
               <div className="aspect-square relative overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600">
                 <Image 
@@ -188,7 +197,7 @@ const PromoSections = () => (
           <div className="flex-1">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">သင့်၏ Shwe Casino Journey ကို စတင်လိုက်ပါ။</h2>
             <p className="text-xl text-red-100 mb-6">ကမာရန် အခုသင့်ရှေ့ပြေးပါ။ သင့်အကောင့်ကို စတင်ဖွင့်လိုင့် ဖမ်းပါ။</p>
-            <button onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-red-900 px-8 py-3 rounded-lg font-bold">ယခု စတင်အသုံးပြုပါ</button>
+            <button onClick={openAffiliateLink} className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-red-900 px-8 py-3 rounded-lg font-bold">ယခု စတင်အသုံးပြုပါ</button>
           </div>
           <div className="flex-1">
             <div className="relative rounded-lg overflow-hidden h-64 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
@@ -213,7 +222,7 @@ const PromoSections = () => (
           <div className="flex-1">
             <h2 className="text-3xl md:text-4xl font-bold text-red-900 mb-4">ကျွန်ုပ်တို့၏ စိတ်လှုပ်ရှားဖွယ် ပရိုမိုးရှင်း</h2>
             <p className="text-xl text-red-800 mb-6">ဖြစ်ထွန်း ဘိုးသန့်သော ပျက်ရန်ကို ဖြင့်ကြည်သလိုပါ။</p>
-            <button onClick={() => window.open(getRandomLink(), '_blank')} className="bg-gradient-to-r from-red-800 to-red-900 text-white px-8 py-3 rounded-lg font-bold">ပရိုမိုးရှင်းကြည့်ရှုပါ</button>
+            <button onClick={openAffiliateLink} className="bg-gradient-to-r from-red-800 to-red-900 text-white px-8 py-3 rounded-lg font-bold">ပရိုမိုးရှင်းကြည့်ရှုပါ</button>
           </div>
           <div className="flex-1">
             <div className="relative rounded-lg overflow-hidden h-80 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
@@ -242,8 +251,8 @@ const Footer = () => (
         <div>
           <h3 className="text-xl font-bold text-yellow-400 mb-4">အကြောင်းအရာ</h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-yellow-400">စည်းကမ်းချက်များ</a></li>
-            <li><a href="#" className="hover:text-yellow-400">ကျန်ရန်ကို့အကောင်း</a></li>
+            <li><Link href="#terms" className="hover:text-yellow-400 block">စည်းကမ်းချက်များ</Link></li>
+            <li><Link href="#privacy" className="hover:text-yellow-400 block">ကိုယ်ရေးကိုယ်တာ</Link></li>
           </ul>
         </div>
         <div>
