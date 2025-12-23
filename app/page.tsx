@@ -63,10 +63,15 @@ const Header = () => {
 const HeroBanner = () => (
   <section className="bg-red-900">
     <div className="container mx-auto px-4 py-6">
+      {/* 添加這個 H1，視覺上隱藏但 SEO 可見 */}
+      <h1 className="sr-only">
+        Shwe Casino 99 - မြန်မာ့ အကောင်းဆုံး အွန်လိုင်း ကာစီနို
+      </h1>
+      
       <div className="relative rounded-lg h-96 overflow-hidden">
         <Image 
           src="/images/heng3.jpg" 
-          alt="Shwe Casino Hero Banner"
+          alt="Shwe Casino 99 - Myanmar's Best Online Casino Welcome Bonus"
           fill
           className="object-cover"
           priority
@@ -257,11 +262,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-red-900">
       <Header />
-      <HeroBanner />
-      <SearchBar />
-      <GameProviders />
-      <PopularGames />
-      <PromoSections />
+      <main>
+        <HeroBanner />
+        <SearchBar />
+        <GameProviders />
+        <PopularGames />
+        <PromoSections />
+      </main>
       <Footer />
     </div>
   );
