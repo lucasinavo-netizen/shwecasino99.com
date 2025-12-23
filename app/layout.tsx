@@ -56,6 +56,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="my" className={`${myanmar.variable} ${inter.variable}`}>
       <body className={myanmar.className}>
+        {/* Structured Data */}
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Shwe Casino 99',
+              url: 'https://shwecasino99.com',
+              logo: 'https://shwecasino99.com/images/logo.png',
+              description: 'မြန်မာ့အကောင်းဆုံး အွန်လိုင်း ကာစီနို',
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'MM',
+              },
+            }),
+          }}
+        />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-PXLF9Y5ZD6"
