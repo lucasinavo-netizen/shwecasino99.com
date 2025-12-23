@@ -30,7 +30,7 @@ const Header = () => {
             <div className="relative h-12 w-auto flex items-center">
               <Image 
                 src="/images/logo.png" 
-                alt="Shwe Casino 99 Logo"
+                alt="Shwe Casino 99 - Myanmar Online Casino Logo"
                 width={180}
                 height={48}
                 className="object-contain h-full w-auto"
@@ -116,7 +116,7 @@ const GameProviders = () => {
               <div className="absolute inset-0 w-full h-full">
                 <Image 
                   src={p.logo} 
-                  alt={`${p.name} Logo`}
+                  alt={`${p.name} - Premium Casino Games Provider for Myanmar Players`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
@@ -159,7 +159,7 @@ const PopularGames = () => {
               <div className="aspect-square relative overflow-hidden bg-gradient-to-br from-blue-400 to-purple-600">
                 <Image 
                   src={g.image} 
-                  alt={g.name}
+                  alt={`${g.name} Slot Game by ${g.provider} - Play at Shwe Casino 99`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 12.5vw"
@@ -194,7 +194,7 @@ const PromoSections = () => (
             <div className="relative rounded-lg overflow-hidden h-64 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
               <Image 
                 src="/images/promo-welcome-bonus.jpg" 
-                alt="New Welcome Bonus Promotion"
+                alt="Shwe Casino 99 Welcome Bonus - Up to 100% First Deposit Bonus"
                 fill
                 className="object-cover"
                 onError={(e) => {
@@ -219,7 +219,7 @@ const PromoSections = () => (
             <div className="relative rounded-lg overflow-hidden h-80 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
               <Image 
                 src="/images/promo-christmas.jpg" 
-                alt="Merry Shwe Christmas Promotion"
+                alt="Shwe Casino 99 Christmas Promotion - Special Bonuses & Rewards"
                 fill
                 className="object-cover"
                 onError={(e) => {
