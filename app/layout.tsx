@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Myanmar, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const myanmar = Noto_Sans_Myanmar({
@@ -54,7 +55,22 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="my" className={`${myanmar.variable} ${inter.variable}`}>
-      <body className={myanmar.className}>{children}</body>
+      <body className={myanmar.className}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PXLF9Y5ZD6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PXLF9Y5ZD6');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
