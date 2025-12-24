@@ -1,12 +1,14 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shwecasino99.com';
+  
   return {
     rules: {
       userAgent: '*',
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://shwecasino99.com/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   }
 }
