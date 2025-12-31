@@ -7,6 +7,14 @@ import MobileMenu from './MobileMenu';
 import { openAffiliateLink } from '../lib/affiliate';
 
 export default function Header() {
+  const handleSignUp = () => {
+    openAffiliateLink('အကောင့်ဖွင့်ရန်', 'Header-SignUp');
+  };
+  
+  const handleSignIn = () => {
+    openAffiliateLink('အကောင့်ဝင်ရန်', 'Header-SignIn');
+  };
+  
   return (
     <header className="bg-[#8B0000] border-b-4 border-yellow-600">
       <div className="container mx-auto px-4">
@@ -26,13 +34,13 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-3">
             <ClientButton 
-              onClick={openAffiliateLink}
+              onClick={handleSignUp}
               variant="primary"
             >
               အကောင့်ဖွင့်ရန်
             </ClientButton>
             <ClientButton 
-              onClick={openAffiliateLink}
+              onClick={handleSignIn}
               variant="secondary"
             >
               အကောင့်ဝင်ရန်

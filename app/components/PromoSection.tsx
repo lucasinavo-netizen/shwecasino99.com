@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import ClientButton from './ClientButton';
-import { affiliateLinks } from '../lib/affiliate';
+import { openAffiliateLink } from '../lib/affiliate';
 
 interface PromoSectionProps {
   title: string;
@@ -26,9 +26,7 @@ export default function PromoSection({
   buttonVariant = 'primary',
 }: PromoSectionProps) {
   const handleClick = () => {
-    if (typeof window !== 'undefined') {
-      window.open(affiliateLinks[0].url, '_blank', 'noopener,noreferrer');
-    }
+    openAffiliateLink(buttonText, 'PromoSection');
   };
 
   return (

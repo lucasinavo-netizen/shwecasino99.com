@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Noto_Sans_Myanmar, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import ExternalLinkTracker from "./components/analytics/ExternalLinkTracker";
 
 const myanmar = Noto_Sans_Myanmar({
   subsets: ["myanmar"],
@@ -245,6 +246,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         
+        <ExternalLinkTracker />
         {children}
       </body>
     </html>

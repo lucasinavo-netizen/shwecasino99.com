@@ -12,9 +12,13 @@ interface ProviderCardProps {
 }
 
 export default function ProviderCard({ provider }: ProviderCardProps) {
+  const handleClick = () => {
+    openAffiliateLink(provider.name, 'ProviderCard');
+  };
+  
   return (
     <div 
-      onClick={openAffiliateLink}
+      onClick={handleClick}
       className={`bg-gradient-to-br ${provider.color} rounded-lg overflow-hidden h-48 flex flex-col items-center justify-center border border-red-700 hover:border-yellow-500 transition-colors relative group cursor-pointer`}
     >
       <div className="absolute inset-0 w-full h-full">
@@ -32,4 +36,6 @@ export default function ProviderCard({ provider }: ProviderCardProps) {
     </div>
   );
 }
+
+
 

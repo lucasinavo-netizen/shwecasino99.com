@@ -13,6 +13,12 @@ interface GameCardWrapperProps {
 }
 
 export default function GameCardWrapper({ game }: GameCardWrapperProps) {
-  return <GameCard game={game} onPlay={openAffiliateLink} />;
+  const handlePlay = () => {
+    openAffiliateLink(game.name, 'GameCardWrapper');
+  };
+  
+  return <GameCard game={game} onPlay={handlePlay} />;
 }
+
+
 
