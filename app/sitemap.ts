@@ -3,6 +3,7 @@ import gamesData from '../data/games.json'
 import blogPostsData from '../data/blog-posts.json'
 import promotionsData from '../data/promotions.json'
 
+// 確保 sitemap 正確導出，Next.js 14 會自動生成 sitemap.xml
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shwecasino99.com';
   
