@@ -90,11 +90,6 @@ export default function SlotsPage() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                {game.badge && (
-                  <div className="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-1 rounded">
-                    {game.badge}
-                  </div>
-                )}
               </div>
               <div className="p-3">
                 <div className="text-white font-semibold text-sm truncate mb-1">
