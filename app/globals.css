@@ -19,3 +19,15 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Blog post links styling */
+.prose a {
+  color: #fbbf24;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: #fcd34d;
+  text-decoration: underline;
+}

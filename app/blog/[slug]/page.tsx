@@ -156,13 +156,15 @@ export default function BlogPostPage({ params }: PageProps) {
             </div>
 
             <div className="prose prose-invert max-w-none">
-              <div className="text-white text-lg leading-relaxed whitespace-pre-line mb-6">
-                {post.contentMM}
-              </div>
+              <div 
+                className="text-white text-lg leading-relaxed mb-6"
+                dangerouslySetInnerHTML={{ __html: post.contentMM.replace(/\n/g, '<br />') }}
+              />
               {post.content && (
-                <div className="text-gray-300 text-base leading-relaxed whitespace-pre-line">
-                  {post.content}
-                </div>
+                <div 
+                  className="text-gray-300 text-base leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />') }}
+                />
               )}
             </div>
 
@@ -193,4 +195,5 @@ export default function BlogPostPage({ params }: PageProps) {
     </>
   );
 }
+
 

@@ -314,3 +314,4 @@ export default function GameDetailPage({ params }: PageProps) {
   );
 }
 
+

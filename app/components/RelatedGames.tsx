@@ -80,3 +80,4 @@ export default function RelatedGames({ currentGame, games, maxItems = 4 }: Relat
   );
 }
 
+
