@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     template: "%s | Shwe Casino 99"
   },
   
-  description: "Shwe Casino 99 - မြန်မာ့ နံပါတ်တစ် အွန်လိုင်း ကာစီနို။ Pragmatic Play, PG Soft, BGaming ဂိမ်းများ၊ ဘောနပ်စ် အများဆုံး၊ ငွေထုတ်ယူမှု မြန်ဆန်၊ 24/7 မြန်မာဘာသာ ထောက်ပံ့မှု။ လုံခြုံစိတ်ချရပြီး တရားဝင် လိုင်စင်ရရှိထားသော ကာစီနို။",
+  description: "Shwe Casino 99 - မြန်မာ့ အကောင်းဆုံး အွန်လိုင်း ကာစီနို။ Pragmatic Play, PG Soft ဂိမ်းများ၊ ဘောနပ်စ် အများဆုံး၊ ငွေထုတ် မြန်ဆန်၊ 24/7 ထောက်ပံ့မှု။",
   
   keywords: [
     // 緬甸文關鍵字
@@ -116,7 +116,6 @@ export const metadata: Metadata = {
     canonical: baseUrl,
     languages: {
       'my-MM': baseUrl,
-      'en': `${baseUrl}/en`,
     },
   },
   

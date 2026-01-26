@@ -113,21 +113,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // 動態遊戲頁面
-  const gamePages: MetadataRoute.Sitemap = gamesData.map((game) => ({
-    url: `${baseUrl}/games/${game.slug}`,
-    lastModified: new Date(game.releaseDate),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
+  // 動態遊戲頁面（只包含有效的遊戲）
+  const gamePages: MetadataRoute.Sitemap = gamesData
+    .filter(game => game.slug && game.name) // 確保必要欄位存在
+    .map((game) => ({
+      url: `${baseUrl}/games/${game.slug}`,
+      lastModified: new Date(game.releaseDate || new Date()),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }));
 
-  // 動態部落格頁面
-  const blogPages: MetadataRoute.Sitemap = blogPostsData.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.lastModified),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
+  // 動態部落格頁面（只包含有效的文章）
+  const blogPages: MetadataRoute.Sitemap = blogPostsData
+    .filter(post => post.slug && post.title) // 確保必要欄位存在
+    .map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.lastModified || new Date()),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
 
   return [...staticPages, ...gamePages, ...blogPages];
 }

@@ -6,8 +6,8 @@ import promotionsData from '../../../data/promotions.json';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shwecasino99.com';
 
 export const metadata: Metadata = {
-  title: 'ကြိုဆို ဘောနပ်စ် 100% | Welcome Bonus အမြင့်ဆုံး 50,000 MMK | Shwe Casino 99',
-  description: 'Shwe Casino 99 ကြိုဆို ဘောနပ်စ် - ပထမဆုံး အပ်ငွေ 100% အမြင့်ဆုံး 50,000 MMK။ အလွယ်တကူ ရယူနိုင်၊ မြန်ဆန်သော အတည်ပြုချက်၊ နည်းသော လောင်းကြေး လိုအပ်ချက်များ။ Welcome bonus 100% up to 50,000 MMK - Easy claim, low wagering.',
+  title: 'ကြိုဆို ဘောနပ်စ် 100% | Welcome Bonus | Shwe Casino 99',
+  description: 'Shwe Casino 99 ကြိုဆို ဘောနပ်စ် - ပထမဆုံး အပ်ငွေ 100% အမြင့်ဆုံး 50,000 MMK။ အလွယ်တကူ ရယူနိုင်၊ မြန်ဆန်သော အတည်ပြုချက်။'.substring(0, 150),
   keywords: [
     'ကြိုဆို ဘောနပ်စ်',
     'ကာစီနို ဘောနပ်စ် မြန်မာ',
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `${baseUrl}/promotions/welcome-bonus`,
+    languages: {
+      'my-MM': `${baseUrl}/promotions/welcome-bonus`,
+    },
   },
 };
 

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 import gamesData from '../../../data/games.json';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shwecasino99.com';
 
@@ -28,11 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  // 緬甸語 SEO 規範：標題格式 = 緬甸語 | 英文 | 品牌名
-  const title = `${game.nameMM} - ဂိမ်း အပြည့်အစုံ သုံးသပ်ချက် | ${game.name} Review | Shwe Casino 99`;
+  // 優化標題長度（50-60 字符）
+  const title = `${game.nameMM} | ${game.name} | Shwe Casino 99`;
   
-  // 緬甸語 SEO 規範：描述 = 緬甸語為主（80-100字）+ 英文補充（20-30字）
-  const description = `${game.nameMM} ဆလော့ ဂိမ်းကို Shwe Casino 99 တွင် ကစားပါ။ RTP ${game.rtp}%၊ ${game.volatilityMM} ပြင်းထန်မှု၊ အမြင့်ဆုံး ဆုငွေ ${game.maxWin}။ ${game.providerMM} ၏ အကောင်းဆုံး ဂိမ်း။ Play ${game.name} slot - RTP ${game.rtp}%, Max win ${game.maxWin}, ${game.provider} game.`;
+  // 優化描述長度（150-160 字符）
+  const description = `${game.nameMM} - RTP ${game.rtp}%၊ ${game.volatilityMM}၊ အမြင့် ${game.maxWin}။ ${game.providerMM} ဂိမ်း။`.substring(0, 150);
 
   // 緬甸語 SEO 規範：關鍵字 = 60% 緬甸語 + 20% 混合 + 20% 英文
   const keywords = [
@@ -81,7 +82,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `${baseUrl}/games/${game.slug}`,
       languages: {
         'my-MM': `${baseUrl}/games/${game.slug}`,
-        'en': `${baseUrl}/en/games/${game.slug}`,
       },
     },
   };
@@ -139,21 +139,11 @@ export default function GameDetailPage({ params }: PageProps) {
 
       <div className="min-h-screen bg-red-900">
         {/* Breadcrumbs */}
-        <nav className="bg-red-950 py-3">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center space-x-2 text-sm text-white">
-              <Link href="/" className="hover:text-yellow-400">
-                လေ့လာရန်
-              </Link>
-              <span>/</span>
-              <Link href="/games/slots" className="hover:text-yellow-400">
-                ဆလော့ ဂိမ်းများ
-              </Link>
-              <span>/</span>
-              <span className="text-yellow-400">{game.nameMM}</span>
-            </div>
-          </div>
-        </nav>
+        <Breadcrumbs items={[
+          { label: 'လေ့လာရန်', href: '/' },
+          { label: game.categoryMM, href: `/games/${game.category}` },
+          { label: game.nameMM },
+        ]} />
 
         <main className="container mx-auto px-4 py-8">
           {/* H1 - 緬甸語 + 英文 */}
@@ -292,6 +282,43 @@ export default function GameDetailPage({ params }: PageProps) {
               </div>
             </section>
           )}
+
+          {/* 內部連結區塊 */}
+          <section className="mb-8 bg-red-950 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              ဆက်စပ်စာမျက်နှာများ | Related Pages
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link
+                href="/promotions/welcome-bonus"
+                className="bg-red-900 p-4 rounded-lg hover:bg-red-800 transition-colors"
+              >
+                <div className="text-yellow-400 font-semibold mb-2">ကြိုဆိုဘောနပ်စ်</div>
+                <div className="text-white text-sm">Welcome Bonus</div>
+              </Link>
+              <Link
+                href="/guide/how-to-play"
+                className="bg-red-900 p-4 rounded-lg hover:bg-red-800 transition-colors"
+              >
+                <div className="text-yellow-400 font-semibold mb-2">ကစားနည်း</div>
+                <div className="text-white text-sm">How to Play</div>
+              </Link>
+              <Link
+                href={`/games/${game.category}`}
+                className="bg-red-900 p-4 rounded-lg hover:bg-red-800 transition-colors"
+              >
+                <div className="text-yellow-400 font-semibold mb-2">{game.categoryMM}</div>
+                <div className="text-white text-sm">More {game.categoryMM}</div>
+              </Link>
+              <Link
+                href="/guide/payment-methods"
+                className="bg-red-900 p-4 rounded-lg hover:bg-red-800 transition-colors"
+              >
+                <div className="text-yellow-400 font-semibold mb-2">ငွေပေးချေမှု</div>
+                <div className="text-white text-sm">Payment Methods</div>
+              </Link>
+            </div>
+          </section>
 
           {/* CTA */}
           <div className="bg-gradient-to-r from-yellow-600 to-yellow-500 p-6 rounded-lg text-center">

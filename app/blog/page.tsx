@@ -7,7 +7,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shwecasino99.com';
 
 export const metadata: Metadata = {
   title: 'ဘလော့ | Blog | Shwe Casino 99',
-  description: 'Shwe Casino 99 ဘလော့ - ဂိမ်း သုံးသပ်ချက်များ၊ လမ်းညွှန်များ၊ ဗျူဟာ သင်ကြားမှုများ၊ လုပ်ငန်း သတင်းများ။ မြန်မာဘာသာဖြင့် အပြည့်အစုံ သတင်းများ ဖတ်ရှုပါ။ Shwe Casino 99 Blog - Game reviews, guides, strategies, industry news in Myanmar language.',
+  description: 'Shwe Casino 99 ဘလော့ - ဂိမ်း သုံးသပ်ချက်များ၊ လမ်းညွှန်များ၊ ဗျူဟာ သင်ကြားမှုများ။ မြန်မာဘာသာဖြင့် သတင်းများ။'.substring(0, 150),
   keywords: [
     'ဘလော့',
     'ကာစီနို သတင်းများ',

@@ -7,7 +7,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shwecasino99.com';
 
 export const metadata: Metadata = {
   title: 'ထည့်သွင်းမှု ဘောနပ်စ် | Referral Bonus | Shwe Casino 99',
-  description: 'Shwe Casino 99 ထည့်သွင်းမှု ဘောနပ်စ် - မိတ်ဆွေများကို ထည့်သွင်းပြီး ဘောနပ်စ် ဆုလာဘ်များ ရယူပါ။ Refer friends and earn bonus rewards.',
+  description: 'Shwe Casino 99 ထည့်သွင်းမှု ဘောနပ်စ် - မိတ်ဆွေများကို ထည့်သွင်းပြီး ဘောနပ်စ် ဆုလာဘ်များ ရယူပါ။'.substring(0, 150),
   keywords: [
     'ထည့်သွင်းမှု ဘောနပ်စ်',
     'referral bonus Myanmar',
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `${baseUrl}/promotions/referral`,
+    languages: {
+      'my-MM': `${baseUrl}/promotions/referral`,
+    },
   },
 };
 

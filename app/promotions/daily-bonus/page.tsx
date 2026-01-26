@@ -7,7 +7,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shwecasino99.com';
 
 export const metadata: Metadata = {
   title: 'နေ့စဉ် ဘောနပ်စ် | Daily Bonus | Shwe Casino 99',
-  description: 'Shwe Casino 99 နေ့စဉ် ဘောနပ်စ် - နေ့စဉ် 10-20% အပ်ငွေ ဘောနပ်စ် ရယူပါ။ Daily bonus 10-20% on deposits.',
+  description: 'Shwe Casino 99 နေ့စဉ် ဘောနပ်စ် - နေ့စဉ် 10-20% အပ်ငွေ ဘောနပ်စ် ရယူပါ။'.substring(0, 150),
   keywords: [
     'နေ့စဉ် ဘောနပ်စ်',
     'daily bonus Myanmar',
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `${baseUrl}/promotions/daily-bonus`,
+    languages: {
+      'my-MM': `${baseUrl}/promotions/daily-bonus`,
+    },
   },
 };
 

@@ -6,8 +6,8 @@ import promotionsData from '../../../data/promotions.json';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://shwecasino99.com';
 
 export const metadata: Metadata = {
-  title: 'VIP အစီအစဉ် | 5 層級會員制度 | Shwe Casino 99',
-  description: 'Shwe Casino 99 VIP အစီအစဉ်သို့ ဝင်ရောက်ပြီး အထူး အကျိုးကျေးဇူးများ ခံစားပါ။ 5 အဖွဲ့ဝင် အဆင့်များ - ကြေးဝါ၊ ငွေ၊ ရွှေ၊ ပလက်တီနမ်၊ စိန်။ Join VIP program - 5 membership tiers with exclusive benefits.',
+  title: 'VIP အစီအစဉ် | VIP Program | Shwe Casino 99',
+  description: 'Shwe Casino 99 VIP အစီအစဉ်သို့ ဝင်ရောက်ပြီး အထူး အကျိုးကျေးဇူးများ ခံစားပါ။ 5 အဖွဲ့ဝင် အဆင့်များ။'.substring(0, 150),
   keywords: [
     'VIP အစီအစဉ်',
     'VIP program Myanmar',
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `${baseUrl}/promotions/vip-program`,
+    languages: {
+      'my-MM': `${baseUrl}/promotions/vip-program`,
+    },
   },
 };
 

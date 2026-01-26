@@ -28,9 +28,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  // 緬甸語 SEO 規範
-  const title = `${post.titleMM} | ${post.title} | Shwe Casino 99 Blog`;
-  const description = `${post.excerptMM} ${post.excerpt}`;
+  // 優化標題長度（50-60 字符）
+  const title = `${post.titleMM} | ${post.title} | Shwe Casino 99`;
+  // 優化描述長度（150-160 字符）
+  const description = `${post.excerptMM}`.substring(0, 150);
 
   const keywords = [
     // 緬甸語核心（60%）
@@ -68,6 +69,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     alternates: {
       canonical: `${baseUrl}/blog/${post.slug}`,
+      languages: {
+        'my-MM': `${baseUrl}/blog/${post.slug}`,
+      },
     },
   };
 }
