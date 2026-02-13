@@ -34,7 +34,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-yellow-400 mb-4">ဆက်သွယ်ရန်</h3>
             <p className="text-sm text-gray-400 mb-2">24/7 Live Chat ထောက်ပံ့မှု</p>
             <p className="text-sm text-gray-400 mb-4">Email: support@shwecasino99.com</p>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400 mb-1">
               Partner:{' '}
               <a
                 href="https://winkyat99.com/"
@@ -43,6 +43,16 @@ export default function Footer() {
                 className="text-yellow-400 hover:text-yellow-300"
               >
                 Winkyat99
+              </a>
+            </p>
+            <p className="text-sm text-gray-400">
+              <a
+                href="https://www.a80kk.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 hover:text-yellow-300"
+              >
+                A80 – Top One Myanmar&apos;s Game Site
               </a>
             </p>
           </div>
