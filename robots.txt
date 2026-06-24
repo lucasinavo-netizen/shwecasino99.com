@@ -1,0 +1,30 @@
+# robots.txt for shwecasino99.com
+User-agent: *
+Allow: /
+Disallow: /go/
+Disallow: /terms.html
+Disallow: /privacy.html
+
+User-agent: GPTBot
+Allow: /
+Disallow: /go/
+User-agent: ClaudeBot
+Allow: /
+Disallow: /go/
+User-agent: PerplexityBot
+Allow: /
+Disallow: /go/
+User-agent: Google-Extended
+Allow: /
+Disallow: /go/
+User-agent: CCBot
+Allow: /
+Disallow: /go/
+User-agent: anthropic-ai
+Allow: /
+Disallow: /go/
+User-agent: Amazonbot
+Allow: /
+
+Disallow: /go/
+Sitemap: https://shwecasino99.com/sitemap.xml

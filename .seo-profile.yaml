@@ -1,0 +1,67 @@
+# SEO Profile — single source of truth for this site.
+# Every employee agent MUST read this before acting on the site.
+# Update `current_state` + `last_full_audit` after every audit.
+
+url: shwecasino99.com
+url_canonical: https://shwecasino99.com/
+brand_name: Shwe Casino 99
+
+# Infrastructure
+framework: static-html
+hosting: vercel
+github_repo: LOCAL-GIT-ONLY (existing GitHub repo is a different Next.js app)
+
+
+# Analytics
+gsc:
+  property: https://shwecasino99.com/
+  verified: true
+  permission: siteFullUser
+  service_account_owner: true
+
+ga4:
+  property_id: "517267006"
+  measurement_id: G-PXLF9Y5ZD6
+  service_account_viewer: true
+
+# Brand / Positioning
+target_market: Myanmar (MM)
+target_language: my-MM
+target_keywords:
+  primary: ["shwe casino", "casino myanmar"]
+  secondary: []
+position: "Shwe Casino 99 — Myanmar gambling network"
+
+# Affiliate
+affiliate_cloak_path: /go/sc
+affiliate_cloak_path_secondary: /go/sc2
+affiliate_destination: https://www.rr95k.com/?ch=0cf28df51e
+affiliate_destination_secondary: https://www.mm38aa.com/m/home?affiliateCode=lu0001
+
+# Current State (auto-updated by sk-tech / sk-content)
+current_state:
+  body_words: 600
+  h2_count: 6
+  h3_count: 4
+  sitemap_urls: 1
+  indexed_pages_90d: 1
+  clicks_90d: 33
+  impressions_90d: 626
+  last_full_audit: 2026-06-17
+  last_content_update: 2026-06-18
+  last_visual_screenshot: /tmp/all-sites-visual/shwecasino99.com.png
+
+# Known Issues
+known_issues: []
+
+# Confirmed Facts
+confirmed_facts:
+  pbn_inline_strategy: nofollow  # All cross-network <a href> require rel=nofollow noopener noreferrer
+
+# Pending Decisions
+pending_decisions: []
+
+# Site-Specific Notes
+notes:
+  - "Local Git source initialized 2026-06-24. Do not deploy from lucasinavo-netizen/shwecasino99.com until repo/source is reconciled."
+  - "Deploy = local file edit + vercel deploy --prod. 3 brand pages noindex (2026-06-18)."
