@@ -9,7 +9,8 @@ brand_name: Shwe Casino 99
 # Infrastructure
 framework: static-html
 hosting: vercel
-github_repo: LOCAL-GIT-ONLY (existing GitHub repo is a different Next.js app)
+github_repo: lucasinavo-netizen/shwecasino99.com#production-static-source
+github_main_warning: main branch is a different Next.js app and is not the live static source
 
 
 # Analytics
@@ -63,5 +64,6 @@ pending_decisions: []
 
 # Site-Specific Notes
 notes:
-  - "Local Git source initialized 2026-06-24. Do not deploy from lucasinavo-netizen/shwecasino99.com until repo/source is reconciled."
-  - "Deploy = local file edit + vercel deploy --prod. 3 brand pages noindex (2026-06-18)."
+  - "Static source branch production-static-source created 2026-06-24. Do not deploy from repo main; main is a different Next.js app."
+  - "Vercel production binding has not been changed yet. Deploy remains controlled until binding is explicitly approved."
+  - "Deploy = edit production-static-source + verify formal domain. 3 brand pages noindex (2026-06-18)."

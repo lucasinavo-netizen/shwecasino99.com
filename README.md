@@ -1,9 +1,11 @@
 # Shwe Casino 99 Static Source
 
 This directory is the current static production source for `shwecasino99.com`.
-It is intentionally not wired to the existing GitHub repo yet, because the
-GitHub repo `lucasinavo-netizen/shwecasino99.com` contains a different Next.js
-application and is not the live static site.
+It is mirrored to `lucasinavo-netizen/shwecasino99.com` on the
+`production-static-source` branch.
+
+The repository `main` branch is a different Next.js application and must not be
+used as the production source for the live static site.
 
 - Domain: `shwecasino99.com`
 - Market: Myanmar
@@ -13,11 +15,10 @@ application and is not the live static site.
 
 ## Source Control
 
-Use the local Git history in this directory as the source of truth until the
-remote repo decision is made.
+Use `production-static-source` as the source branch for this static site.
 
-Do not add the existing GitHub repo as `origin` and push this source without
-explicit approval. That would replace a different application.
+Do not push this static source to `main`. That would replace a different
+application. Vercel production is not rebound to this branch yet.
 
 ## Deploy
 
