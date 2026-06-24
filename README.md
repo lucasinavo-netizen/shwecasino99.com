@@ -18,13 +18,13 @@ used as the production source for the live static site.
 Use `production-static-source` as the source branch for this static site.
 
 Do not push this static source to `main`. That would replace a different
-application. Vercel production is not rebound to this branch yet.
+application. Vercel production tracks `production-static-source`.
 
 ## Deploy
 
 ```
 ./apply-domain.sh your-domain.com
-vercel deploy --prod --yes
+git push origin production-static-source
 ```
 
 Always verify the formal domain after deployment:

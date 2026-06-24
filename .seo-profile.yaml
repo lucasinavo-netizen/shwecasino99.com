@@ -65,5 +65,5 @@ pending_decisions: []
 # Site-Specific Notes
 notes:
   - "Static source branch production-static-source created 2026-06-24. Do not deploy from repo main; main is a different Next.js app."
-  - "Vercel production binding has not been changed yet. Deploy remains controlled until binding is explicitly approved."
+  - "Vercel production branch tracks production-static-source as of 2026-06-24."
   - "Deploy = edit production-static-source + verify formal domain. 3 brand pages noindex (2026-06-18)."
