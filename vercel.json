@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/go/sc",
-      "destination": "/api/go?to=rr95"
+      "destination": "/api/go"
     },
     {
       "source": "/go/sc2",
-      "destination": "/api/go?to=mm38"
+      "destination": "/api/go"
     }
   ],
   "headers": [
